@@ -5,6 +5,7 @@ package auth;
 service AuthService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
     rpc Login (LoginRequest) returns (LoginResponse) {}
+    rpc FindAll () returns () {}
 }
 
 /* Register */
@@ -29,4 +30,16 @@ message LoginRequest {
 
 message LoginResponse {
     string access_token = 1;
+}
+
+/* Find All */
+message User {
+    string _id = 1;
+    string username = 2;
+    string password = 3;
+    string role = 4;
+}
+
+message UserList {
+    repeated User users = 1;
 }
