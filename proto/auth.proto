@@ -5,7 +5,7 @@ package auth;
 service AuthService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
     rpc Login (LoginRequest) returns (LoginResponse) {}
-    rpc FindAll () returns () {}
+    rpc FindAll () returns (UserList) {}
 }
 
 /* Register */
