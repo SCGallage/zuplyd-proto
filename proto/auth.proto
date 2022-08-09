@@ -2,10 +2,12 @@ syntax = "proto3";
 
 package auth;
 
+import "google/protobuf/empty.proto";
+
 service AuthService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
     rpc Login (LoginRequest) returns (LoginResponse) {}
-    rpc FindAll () returns (UserList) {}
+    rpc FindAll (google.protobuf.Empty) returns (UserList) {}
 }
 
 /* Register */
